@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			eLearning - {% block title %}Homepage{% endblock %}
+		</title>
+		{% include 'layouts/adminlte/stylesheets.html.twig' %}
+		{% if is_granted('IS_AUTHENTICATED_FULLY')==false %}
+			<style>
+				body:not(.sidebar-mini-md) .content-wrapper,
+				body:not(.sidebar-mini-md) .main-footer,
+				body:not(.sidebar-mini-md) .main-header {
+					transition: margin-left 0.3s ease-in-out;
+					margin-left: 0;
+				}
+			</style>
+		{% endif %}
+		{% block stylesheets %}{% endblock %}
+
+	</head>
+	<body class="hold-transition sidebar-mini layout-fixed ">
+		<div class="wrapper">
+			{% include 'layouts/adminlte/navbar.html.twig' %}
+
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				{% include 'layouts/adminlte/sidebar.html.twig' %}
+			{% endif %}
+
+			<!-- Content Wrapper. Contains page content -->
+			<div
+				class="content-wrapper">
+				<!-- Main content -->
+				<section class="content">
+					<br style="clear:both;"/> {% block body %}{% endblock %}
+					<br style="clear:both;"/>
+				</section>
+				<!-- /.content -->
+			</div>
+			<!-- /.content-wrapper -->
+
+			{% include 'layouts/adminlte/footer.html.twig' %}
+		</div>
+
+		{% include 'layouts/adminlte/javascripts.html.twig' %}
+		{% block javascripts %}{% endblock %}
+	</body>
+</html>
