@@ -12,7 +12,7 @@ This is an simple applicaiotn using symfony veriosn v4.4. This application inclu
 Clone git repo
 
 ```
-git clone https://github.com/anwarhossainam2020/symfony4lts-adminpanel.git
+git clone https://github.com/ranaars/symfony4lts-adminpanel.git
 ```
 
 Install dependencies:
